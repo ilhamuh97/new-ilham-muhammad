@@ -15,7 +15,7 @@ export function GitHubLink() {
         </h2>
 
         <a
-          href="https://github.com/ilhamuh97/portfolio-website"
+          href="https://github.com/ilhamuh97/new-ilham-muhammad"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-4 px-8 py-6 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 group hover:scale-105 hover:bg-white/20 dark:hover:bg-white/10 animate-fade-in-up"

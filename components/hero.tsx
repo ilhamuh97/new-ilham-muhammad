@@ -78,10 +78,9 @@ export function Hero() {
       )}
 
       <div className="max-w-md mx-auto text-center space-y-6 relative z-10">
-        <div className="relative w-64 h-64 mx-auto group">
+        <div className="relative w-48 h-48 mx-auto group">
           <div
             className="relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3"
-            onClick={handleImageClick}
           >
             <Image
               src="assets/ilham-muhammad.jpeg"
