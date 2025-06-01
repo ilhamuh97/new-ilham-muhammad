@@ -186,7 +186,7 @@ export function Header() {
         />
 
         {/* Navigation Content */}
-        <div className="relative h-full flex flex-col items-center justify-center px-8"
+        <div className="relative h-dvh flex flex-col items-center justify-center px-8"
           onClick={() => setIsMenuOpen(false)}>
           {/* Navigation Items */}
           <nav className="flex flex-col items-center space-y-8">

@@ -9,7 +9,7 @@ export default function Portfolio() {
   return (
     <>
       <Header />
-      <main className="h-screen overflow-y-scroll scroll-smooth" style={{ scrollSnapType: "y mandatory" }}>
+      <main className="h-dvh overflow-y-scroll scroll-smooth" style={{ scrollSnapType: "y mandatory" }}>
         <Hero />
         <Journey />
         <Projects />
