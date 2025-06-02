@@ -35,7 +35,7 @@ export function Hero() {
     <section
       id="hero"
       className="
-        h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden
+        h-dvh flex items-center justify-center px-4 py-8 relative overflow-hidden
         bg-gradient-to-br 
         from-sky-300 via-sky-400 to-cyan-500
         dark:from-sky-900 dark:via-sky-800 dark:to-cyan-900
@@ -81,6 +81,7 @@ export function Hero() {
         <div className="relative w-48 h-48 mx-auto group">
           <div
             className="relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3"
+            onClick={handleImageClick}
           >
             <Image
               src="assets/ilham-muhammad.jpeg"

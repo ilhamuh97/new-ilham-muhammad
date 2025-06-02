@@ -134,7 +134,7 @@ export function Journey() {
   return (
     <section
       id="journey"
-      className="h-screen flex flex-col px-4 pt-16 pb-6 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 dark:from-emerald-950 dark:via-teal-950 dark:to-cyan-950 relative overflow-hidden"
+      className="h-dvh flex flex-col px-4 pt-16 pb-6 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 dark:from-emerald-950 dark:via-teal-950 dark:to-cyan-950 relative overflow-hidden"
       style={{ scrollSnapAlign: "start" }}
     >
       <div

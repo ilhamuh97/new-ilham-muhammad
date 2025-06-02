@@ -98,7 +98,7 @@ export function Header() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-black dark:text-white/80 hover:text-black dark:hover:text-white px-3 py-2 font-medium transition-all duration-500 ease-in-out hover:scale-105 text-sm`}
+                    className={`text-gray-700 dark:text-white/80 hover:text-gray-700 dark:hover:text-white px-3 py-2 font-medium transition-all duration-500 ease-in-out hover:scale-105 text-sm`}
                   >
                     {item.name}
                   </button>

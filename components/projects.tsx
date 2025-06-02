@@ -68,7 +68,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="h-screen flex items-center justify-center px-4 pt-16 pb-6 bg-gradient-to-br from-violet-100 via-purple-50 to-fuchsia-100 dark:from-violet-950 dark:via-purple-950 dark:to-fuchsia-950 relative overflow-hidden"
+      className="h-dvh flex items-center justify-center px-4 pt-16 pb-6 bg-gradient-to-br from-violet-100 via-purple-50 to-fuchsia-100 dark:from-violet-950 dark:via-purple-950 dark:to-fuchsia-950 relative overflow-hidden"
       style={{ scrollSnapAlign: "start" }}
     >
       <div className="max-w-2xl mx-auto relative z-10">
