@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
@@ -88,38 +88,6 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(50px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
-        firework: {
-          "0%": {
-            transform: "scale(0) rotate(0deg)",
-            opacity: "1",
-          },
-          "50%": {
-            transform: "scale(1.2) rotate(180deg)",
-            opacity: "0.8",
-          },
-          "100%": {
-            transform: "scale(0.3) rotate(360deg)",
-            opacity: "0",
-          },
-        },
-        sparkle: {
-          "0%": {
-            transform: "scale(0) rotate(0deg)",
-            opacity: "0",
-          },
-          "30%": {
-            transform: "scale(1) rotate(120deg)",
-            opacity: "1",
-          },
-          "70%": {
-            transform: "scale(0.8) rotate(240deg)",
-            opacity: "0.6",
-          },
-          "100%": {
-            transform: "scale(0) rotate(360deg)",
-            opacity: "0",
-          },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -129,12 +97,10 @@ const config: Config = {
         "fade-in-down": "fade-in-down 0.6s ease-out",
         "slide-in-left": "slide-in-left 0.6s ease-out",
         "slide-in-right": "slide-in-right 0.6s ease-out",
-        firework: "firework 2.5s ease-out forwards",
-        sparkle: "sparkle 2.8s ease-in-out forwards",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
 
-export default config
+export default config;

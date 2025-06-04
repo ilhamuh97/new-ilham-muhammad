@@ -1,36 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"
 
 export function Hero() {
-  const [showFireworks, setShowFireworks] = useState(false)
-
-  const handleImageClick = () => {
-    setShowFireworks(true)
-    setTimeout(() => setShowFireworks(false), 3000)
-  }
-
-  const getRandomPosition = () => ({
-    left: `${Math.random() * 80 + 10}%`,
-    top: `${Math.random() * 60 + 20}%`,
-  })
-
-  const getRandomColor = () => {
-    const colors = [
-      "bg-yellow-400",
-      "bg-pink-400",
-      "bg-blue-400",
-      "bg-green-400",
-      "bg-purple-400",
-      "bg-red-400",
-      "bg-orange-400",
-      "bg-cyan-400",
-    ]
-    return colors[Math.floor(Math.random() * colors.length)]
-  }
-
   return (
     <section
       id="hero"
@@ -42,46 +15,10 @@ export function Hero() {
       "
       style={{ scrollSnapAlign: "start" }}
     >
-      {showFireworks && (
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(15)].map((_, i) => {
-            const position = getRandomPosition()
-            const color = getRandomColor()
-            return (
-              <div
-                key={i}
-                className={`absolute w-3 h-3 ${color} rounded-full animate-firework`}
-                style={{
-                  ...position,
-                  animationDelay: `${Math.random() * 0.5}s`,
-                  animationDuration: `${1.5 + Math.random() * 1}s`,
-                }}
-              />
-            )
-          })}
-          {[...Array(25)].map((_, i) => {
-            const position = getRandomPosition()
-            const color = getRandomColor()
-            return (
-              <div
-                key={`spark-${i}`}
-                className={`absolute w-1.5 h-1.5 ${color} rounded-full animate-sparkle`}
-                style={{
-                  ...position,
-                  animationDelay: `${Math.random() * 0.8}s`,
-                  animationDuration: `${2 + Math.random() * 1}s`,
-                }}
-              />
-            )
-          })}
-        </div>
-      )}
-
       <div className="max-w-md mx-auto text-center space-y-6 relative z-10">
         <div className="relative w-48 h-48 mx-auto group">
           <div
             className="relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3"
-            onClick={handleImageClick}
           >
             <Image
               src="assets/ilham-muhammad.jpeg"

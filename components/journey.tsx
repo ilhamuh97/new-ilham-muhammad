@@ -150,12 +150,12 @@ export function Journey() {
         ref={containerRef}
         className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide"
         style={{
-          scrollSnapType: "y proximity",
+          scrollSnapType: "y mandatory",
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
       >
-        <div className="relative max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto px-4 py-8">
+        <div className="relative max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto px-4 pt-8 pb-12">
           {/* Central Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 sm:w-1.5 lg:w-2 bg-gradient-to-b from-emerald-200 via-teal-300 to-cyan-400 dark:from-emerald-600 dark:via-teal-700 dark:to-cyan-800 rounded-full" />
 

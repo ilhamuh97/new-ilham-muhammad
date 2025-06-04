@@ -9,7 +9,7 @@ export function Header() {
   const [isDark, setIsDark] = useState(false)
 
   // Initialize theme on component mount
-  useState(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme")
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -22,7 +22,7 @@ export function Header() {
         document.documentElement.classList.remove("dark")
       }
     }
-  })
+  }, [])
 
   // Prevent body scroll when menu is open
   useEffect(() => {
