@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import { Github, Heart } from "lucide-react"
+import { Github, Heart } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function GitHubLink() {
   return (
@@ -9,7 +10,13 @@ export function GitHubLink() {
       className="h-dvh flex flex-col items-center justify-center px-4 pt-20 bg-gradient-to-br from-indigo-500 via-sky-500 to-indigo-500 dark:from-black dark:via-sky-950 dark:to-black relative overflow-hidden"
       style={{ scrollSnapAlign: "start" }}
     >
-      <div className="max-w-2xl mx-auto text-center flex-1 flex flex-col justify-center relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-2xl mx-auto text-center flex-1 flex flex-col justify-center relative z-10"
+      >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-white animate-fade-in-down">
           View Source Code
         </h2>
@@ -30,13 +37,12 @@ export function GitHubLink() {
             </p>
           </div>
         </a>
-      </div>
-
+      </motion.div>
       <div className="py-8 w-full border-t border-white/20 dark:border-white/10 mt-auto relative z-10">
         <p className="text-xs sm:text-sm lg:text-base text-white/70 dark:text-white/60 text-center flex items-center justify-center gap-2">
           © 2025 ilhamuh97
         </p>
       </div>
     </section>
-  )
+  );
 }

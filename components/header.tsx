@@ -1,82 +1,82 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Menu, X, Sun, Moon } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isDark, setIsDark] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   // Initialize theme on component mount
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("theme")
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
 
       if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-        setIsDark(true)
-        document.documentElement.classList.add("dark")
+        setIsDark(true);
+        document.documentElement.classList.add("dark");
       } else {
-        setIsDark(false)
-        document.documentElement.classList.remove("dark")
+        setIsDark(false);
+        document.documentElement.classList.remove("dark");
       }
     }
-  }, [])
+  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = "unset"
-    }
-  }, [isMenuOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
 
   const toggleTheme = () => {
-    const newTheme = !isDark
-    setIsDark(newTheme)
+    const newTheme = !isDark;
+    setIsDark(newTheme);
 
     if (newTheme) {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
-  }
+  };
 
   const scrollToSection = (sectionId: string) => {
-    const mainElement = document.querySelector("main")
-    const section = document.getElementById(sectionId)
+    const mainElement = document.querySelector("main");
+    const section = document.getElementById(sectionId);
 
     if (mainElement && section) {
-      const sectionTop = section.offsetTop
+      const sectionTop = section.offsetTop;
       mainElement.scrollTo({
         top: sectionTop,
         behavior: "smooth",
-      })
+      });
     }
 
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   const navigationItems = [
     { name: "Home", id: "hero" },
     { name: "Journey", id: "journey" },
     { name: "Projects", id: "projects" },
     { name: "Source", id: "github" },
-  ]
+  ];
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-white/10 dark:bg-black/10 backdrop-blur-xl border-b border-white/20 dark:border-white/10 shadow-lg transition-all duration-500 ease-in-out py-2`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/30 dark:bg-black/30 border-b border-white/20 dark:border-white/10 shadow-md transition-all duration-500 ease-in-out py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`flex items-center justify-between transition-all duration-500 ease-in-out h-12 `}
@@ -174,7 +174,9 @@ export function Header() {
       {/* Full Screen Mobile Navigation Overlay */}
       <div
         className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ease-in-out ${
-          isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
         {/* Background Overlay */}
@@ -186,8 +188,10 @@ export function Header() {
         />
 
         {/* Navigation Content */}
-        <div className="relative h-dvh flex flex-col items-center justify-center px-8"
-          onClick={() => setIsMenuOpen(false)}>
+        <div
+          className="relative h-dvh flex flex-col items-center justify-center px-8"
+          onClick={() => setIsMenuOpen(false)}
+        >
           {/* Navigation Items */}
           <nav className="flex flex-col items-center space-y-8">
             {navigationItems.map((item, index) => (
@@ -195,10 +199,14 @@ export function Header() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`text-white text-3xl sm:text-4xl lg:text-5xl font-bold hover:text-yellow-300 dark:hover:text-yellow-400 transition-all duration-300 hover:scale-110 transform ${
-                  isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  isMenuOpen
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
                 }`}
                 style={{
-                  transitionDelay: isMenuOpen ? `${index * 100 + 200}ms` : "0ms",
+                  transitionDelay: isMenuOpen
+                    ? `${index * 100 + 200}ms`
+                    : "0ms",
                   transitionDuration: "600ms",
                 }}
               >
@@ -222,5 +230,5 @@ export function Header() {
         </div>
       </div>
     </>
-  )
+  );
 }

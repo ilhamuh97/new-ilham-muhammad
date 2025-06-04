@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"
+import Image from "next/image";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export function Hero() {
   return (
@@ -17,9 +17,7 @@ export function Hero() {
     >
       <div className="max-w-md mx-auto text-center space-y-6 relative z-10">
         <div className="relative w-48 h-48 mx-auto group">
-          <div
-            className="relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3"
-          >
+          <div className="relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3">
             <Image
               src="assets/ilham-muhammad.jpeg"
               alt="Ilham's profile photo"
@@ -33,7 +31,8 @@ export function Hero() {
 
         <div className="space-y-4">
           <h1 className="text-3xl sm:text-4xl font-bold text-white animate-fade-in-up">
-            Hi, my name is <span className="text-yellow-300 dark:text-yellow-400">Ilham</span>
+            Hi, my name is{" "}
+            <span className="text-yellow-300 dark:text-yellow-400">Ilham</span>
           </h1>
 
           <p
@@ -44,7 +43,8 @@ export function Hero() {
             <span className="text-cyan-300 dark:text-cyan-400 font-semibold">
               website developer
             </span>{" "}
-            with a strong interest in visual computing, including fields like computer vision, image processing, and data visualization.
+            with a strong interest in visual computing, including fields like
+            computer vision, image processing, and data visualization.
           </p>
 
           {/* Icon buttons */}
@@ -81,5 +81,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

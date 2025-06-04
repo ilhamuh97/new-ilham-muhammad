@@ -1,15 +1,18 @@
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { Journey } from "@/components/journey"
-import { Projects } from "@/components/projects"
-import { GitHubLink } from "@/components/github-link"
-import { ScrollToTop } from "@/components/scroll-to-top"
+import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { Journey } from "@/components/journey";
+import { Projects } from "@/components/projects";
+import { GitHubLink } from "@/components/github-link";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function Portfolio() {
   return (
     <>
       <Header />
-      <main className="h-dvh overflow-y-scroll scroll-smooth" style={{ scrollSnapType: "y mandatory" }}>
+      <main
+        className="h-dvh overflow-y-scroll scroll-smooth"
+        style={{ scrollSnapType: "y mandatory" }}
+      >
         <Hero />
         <Journey />
         <Projects />
@@ -17,5 +20,5 @@ export default function Portfolio() {
       </main>
       <ScrollToTop />
     </>
-  )
+  );
 }
