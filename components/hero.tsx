@@ -9,12 +9,33 @@ export function Hero() {
       id="hero"
       className="
         h-dvh flex items-center justify-center px-4 py-8 relative overflow-hidden
-        bg-gradient-to-br 
-        from-sky-300 via-sky-400 to-cyan-500
-        dark:from-sky-900 dark:via-sky-800 dark:to-cyan-900
       "
       style={{ scrollSnapAlign: "start" }}
     >
+      {/* Enhanced Blue Sky Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-200 via-blue-300 to-cyan-400 dark:from-sky-900 dark:via-sky-800 dark:to-cyan-900">
+        <div className="absolute inset-0 opacity-80 dark:opacity-40">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-300/60 via-transparent to-cyan-300/60"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-sky-400/70 to-transparent rounded-full blur-3xl animate-float-up"></div>
+          <div
+            className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-r from-cyan-400/70 to-transparent rounded-full blur-3xl animate-float-right"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="absolute top-1/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-blue-300/60 to-sky-300/60 rounded-full blur-2xl animate-float-circle"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute top-1/4 right-1/4 w-72 h-72 bg-gradient-to-tl from-indigo-300/50 to-blue-300/50 rounded-full blur-3xl animate-float-down"
+            style={{ animationDelay: "5s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/3 left-1/3 w-56 h-56 bg-gradient-to-br from-sky-300/50 to-cyan-300/50 rounded-full blur-2xl animate-float-left"
+            style={{ animationDelay: "7s" }}
+          ></div>
+        </div>
+      </div>
+
       <div className="max-w-md mx-auto text-center space-y-6 relative z-10">
         <div className="relative w-48 h-48 mx-auto group">
           <div className="relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3">
@@ -23,24 +44,26 @@ export function Hero() {
               alt="Ilham's profile photo"
               width={256}
               height={256}
-              className="rounded-full object-cover border-4 border-white/30 dark:border-white/50 shadow-2xl"
+              className="rounded-full object-cover border-4 border-white/50 dark:border-white/50 shadow-2xl"
             />
             <div className="absolute inset-0 rounded-full group-hover:from-yellow-400/30 group-hover:to-orange-400/30 transition-all duration-300"></div>
           </div>
         </div>
 
         <div className="space-y-4">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white animate-fade-in-up">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white drop-shadow-lg animate-fade-in-up">
             Hi, my name is{" "}
-            <span className="text-yellow-300 dark:text-yellow-400">Ilham</span>
+            <span className="text-yellow-200 dark:text-yellow-400 hover:text-yellow-300 dark:hover:text-yellow-500  transition-all duration-300">
+              Ilham
+            </span>
           </h1>
 
           <p
-            className="text-white/90 dark:text-white/95 text-sm sm:text-base leading-relaxed animate-fade-in-up"
+            className="text-white/95 dark:text-white/95 text-sm sm:text-base leading-relaxed animate-fade-in-up drop-shadow-md"
             style={{ animationDelay: "0.2s" }}
           >
             I am a{" "}
-            <span className="text-cyan-300 dark:text-cyan-400 font-semibold">
+            <span className="text-cyan-200 dark:text-cyan-400 font-semibold hover:text-cyan-300  transition-all duration-300 dark:hover:text-cyan-500">
               website developer
             </span>{" "}
             with a strong interest in visual computing, including fields like
@@ -57,7 +80,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-blue-400 hover:text-blue-500 transition rounded-full bg-black/30 p-3"
+              className="text-white hover:text-blue-600 transition-colors"
             >
               <FaLinkedin className="text-3xl" />
             </a>
@@ -66,14 +89,14 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-gray-200 hover:text-white transition rounded-full bg-black/30 p-3"
+              className="text-white hover:text-gray-800 transition-colors"
             >
               <FaGithub className="text-3xl" />
             </a>
             <a
               href="mailto:ilhamuh97@gmail.com"
               aria-label="Email"
-              className="text-green-400 hover:text-green-500 transition rounded-full bg-black/30 p-3"
+              className="text-white hover:text-green-600 transition-colors"
             >
               <FaEnvelope className="text-3xl" />
             </a>

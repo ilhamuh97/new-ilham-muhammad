@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Calendar, MapPin } from "lucide-react";
 
 const journeyItems = [
@@ -135,15 +134,39 @@ export function Journey() {
   return (
     <section
       id="journey"
-      className="h-dvh flex flex-col px-4 pt-16 pb-6 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 dark:from-emerald-950 dark:via-teal-950 dark:to-cyan-950 relative overflow-hidden"
+      className="h-dvh flex flex-col px-4 pt-16 pb-6 relative overflow-hidden"
       style={{ scrollSnapAlign: "start" }}
     >
+      {/* Enhanced Green Forest Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-200 via-teal-300 to-green-400 dark:from-emerald-950 dark:via-teal-950 dark:to-cyan-950">
+        <div className="absolute inset-0 opacity-75 dark:opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-green-300/70 via-transparent to-emerald-300/70"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-emerald-400/80 to-transparent rounded-full blur-3xl animate-float-down"></div>
+          <div
+            className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-r from-teal-400/80 to-transparent rounded-full blur-3xl animate-float-up"
+            style={{ animationDelay: "4s" }}
+          ></div>
+          <div
+            className="absolute top-1/5 right-1/7 w-72 h-72 bg-gradient-to-br from-green-300/60 to-emerald-300/60 rounded-full blur-2xl animate-float-circle"
+            style={{ animationDelay: "6s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-tl from-teal-300/60 to-cyan-300/60 rounded-full blur-2xl animate-float-left"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute top-1/4 left-1/3 w-56 h-56 bg-gradient-to-br from-lime-300/50 to-green-300/50 rounded-full blur-3xl animate-float-right"
+            style={{ animationDelay: "8s" }}
+          ></div>
+        </div>
+      </div>
+
       <div
-        className={`flex-shrink-0 pt-8 pb-6 transition-all duration-1000 ${
+        className={`flex-shrink-0 pt-8 pb-6 transition-all duration-1000 relative z-10 ${
           isVisible ? "animate-fade-in-down" : "opacity-0"
         }`}
       >
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center bg-gradient-to-r from-emerald-800 to-teal-800 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent drop-shadow-sm">
           My Journey
         </h2>
       </div>
@@ -151,7 +174,7 @@ export function Journey() {
       {/* Interactive Timeline Container */}
       <div
         ref={containerRef}
-        className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide"
+        className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide relative z-10"
         style={{
           scrollSnapType: "y mandatory",
           scrollbarWidth: "none",
@@ -160,7 +183,7 @@ export function Journey() {
       >
         <div className="relative max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto px-4 pt-8 pb-12">
           {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 sm:w-1.5 lg:w-2 bg-gradient-to-b from-emerald-200 via-teal-300 to-cyan-400 dark:from-emerald-600 dark:via-teal-700 dark:to-cyan-800 rounded-full" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 sm:w-1.5 lg:w-2 bg-gradient-to-b from-emerald-400 via-teal-500 to-green-600 dark:from-emerald-600 dark:via-teal-700 dark:to-cyan-800 rounded-full shadow-lg" />
 
           {/* Timeline Items */}
           <div className="space-y-16 sm:space-y-20 lg:space-y-24">
@@ -179,10 +202,10 @@ export function Journey() {
                 >
                   {/* Timeline Dot */}
                   <div
-                    className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-full border-4 sm:border-6 lg:border-8 border-white dark:border-gray-800 transition-all duration-700 z-20 ${
+                    className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-full border-4 sm:border-6 lg:border-8 border-white dark:border-gray-800 transition-all duration-700 z-20 shadow-lg ${
                       isActive
                         ? `bg-gradient-to-r ${item.color} dark:${item.darkColor} shadow-2xl scale-125 sm:scale-150 lg:scale-175`
-                        : "bg-gray-300 dark:bg-gray-600 scale-100"
+                        : "bg-gray-400 dark:bg-gray-600 scale-100"
                     }`}
                   >
                     <div
@@ -204,7 +227,7 @@ export function Journey() {
                         transition-all duration-700 ${
                           isActive
                             ? "opacity-100 translate-y-0 scale-100"
-                            : "opacity-60 translate-y-8 scale-95"
+                            : "opacity-70 translate-y-8 scale-95"
                         }
                       `}
                     >
@@ -212,7 +235,7 @@ export function Journey() {
                         className={`bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xl border transition-all duration-500 ${
                           isActive
                             ? `shadow-2xl border-opacity-50`
-                            : "border-white/50 dark:border-gray-700/50 shadow-lg"
+                            : "border-white/60 dark:border-gray-700/50 shadow-lg"
                         }`}
                         style={{
                           borderColor: isActive
@@ -237,17 +260,17 @@ export function Journey() {
                         {/* Header */}
                         <div className="flex items-start gap-4 sm:gap-5 lg:gap-6 mb-4 sm:mb-5 lg:mb-6">
                           <div
-                            className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-500 ${
+                            className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-500 shadow-md ${
                               isActive
                                 ? `bg-gradient-to-r ${item.color} dark:${item.darkColor} shadow-lg`
-                                : "bg-gray-200 dark:bg-gray-700"
+                                : "bg-gray-300 dark:bg-gray-700"
                             }`}
                           >
                             <IconComponent
                               className={`w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 transition-colors duration-500 ${
                                 isActive
                                   ? "text-white"
-                                  : "text-gray-500 dark:text-gray-400"
+                                  : "text-gray-600 dark:text-gray-400"
                               }`}
                             />
                           </div>
@@ -257,7 +280,7 @@ export function Journey() {
                               className={`text-lg sm:text-xl lg:text-2xl font-bold transition-colors duration-500 ${
                                 isActive
                                   ? "text-gray-800 dark:text-gray-100"
-                                  : "text-gray-600 dark:text-gray-400"
+                                  : "text-gray-700 dark:text-gray-400"
                               }`}
                             >
                               {item.title}
@@ -266,7 +289,7 @@ export function Journey() {
                               className={`text-sm sm:text-base lg:text-lg font-semibold transition-all duration-500 ${
                                 isActive
                                   ? `bg-gradient-to-r ${item.color} dark:${item.darkColor} bg-clip-text text-transparent`
-                                  : "text-gray-500 dark:text-gray-500"
+                                  : "text-gray-600 dark:text-gray-500"
                               }`}
                             >
                               {item.organization}
@@ -279,8 +302,8 @@ export function Journey() {
                           <div
                             className={`flex items-center gap-2 sm:gap-3 transition-colors duration-500 ${
                               isActive
-                                ? "text-gray-600 dark:text-gray-400"
-                                : "text-gray-500 dark:text-gray-500"
+                                ? "text-gray-700 dark:text-gray-400"
+                                : "text-gray-600 dark:text-gray-500"
                             }`}
                           >
                             <Calendar className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
@@ -291,8 +314,8 @@ export function Journey() {
                           <div
                             className={`flex items-center gap-2 sm:gap-3 transition-colors duration-500 ${
                               isActive
-                                ? "text-gray-600 dark:text-gray-400"
-                                : "text-gray-500 dark:text-gray-500"
+                                ? "text-gray-700 dark:text-gray-400"
+                                : "text-gray-600 dark:text-gray-500"
                             }`}
                           >
                             <MapPin className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
@@ -306,8 +329,8 @@ export function Journey() {
                         <p
                           className={`text-sm sm:text-base lg:text-lg leading-relaxed transition-colors duration-500 ${
                             isActive
-                              ? "text-gray-700 dark:text-gray-300"
-                              : "text-gray-500 dark:text-gray-500"
+                              ? "text-gray-800 dark:text-gray-300"
+                              : "text-gray-600 dark:text-gray-500"
                           }`}
                         >
                           {item.description}

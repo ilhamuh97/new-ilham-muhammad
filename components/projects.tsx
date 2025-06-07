@@ -87,11 +87,39 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="h-dvh flex items-center justify-center px-4 pt-16 pb-6 bg-gradient-to-br from-violet-100 via-purple-50 to-fuchsia-100 dark:from-violet-950 dark:via-purple-950 dark:to-fuchsia-950 relative overflow-hidden"
+      className="h-dvh flex items-center justify-center px-4 pt-16 pb-6 relative overflow-hidden"
       style={{ scrollSnapAlign: "start" }}
     >
+      {/* Enhanced Brown Earth Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-orange-300 to-red-400 dark:from-amber-950 dark:via-orange-950 dark:to-red-950">
+        <div className="absolute inset-0 opacity-70 dark:opacity-25">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-amber-300/60 via-transparent to-orange-300/60"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-orange-400/70 to-transparent rounded-full blur-3xl animate-float-left"></div>
+          <div
+            className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-r from-red-400/70 to-transparent rounded-full blur-3xl animate-float-up"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-br from-amber-300/50 to-orange-300/50 rounded-full blur-2xl animate-float-right"
+            style={{ animationDelay: "5s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-gradient-to-tl from-red-300/50 to-amber-300/50 rounded-full blur-2xl animate-float-down"
+            style={{ animationDelay: "7s" }}
+          ></div>
+          <div
+            className="absolute top-2/3 left-2/3 w-56 h-56 bg-gradient-to-br from-orange-300/50 to-red-300/50 rounded-full blur-2xl animate-float-circle"
+            style={{ animationDelay: "4s" }}
+          ></div>
+          <div
+            className="absolute top-1/3 right-1/2 w-48 h-48 bg-gradient-to-tl from-yellow-300/40 to-orange-300/40 rounded-full blur-3xl animate-float-left"
+            style={{ animationDelay: "9s" }}
+          ></div>
+        </div>
+      </div>
+
       <div className="max-w-2xl mx-auto relative z-10">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400 bg-clip-text text-transparent animate-fade-in-down">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-800 to-orange-800 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent animate-fade-in-down drop-shadow-sm">
           My Projects
         </h2>
 
@@ -103,7 +131,7 @@ export function Projects() {
               variant="outline"
               size="icon"
               onClick={prevProject}
-              className="w-10 h-10 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-violet-200/50 dark:border-violet-700/50 text-violet-700 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-950 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl pointer-events-auto -translate-x-5"
+              className="w-10 h-10 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-amber-300/70 dark:border-amber-700/50 text-amber-800 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl pointer-events-auto -translate-x-5"
               aria-label="Previous project"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -114,7 +142,7 @@ export function Projects() {
               variant="outline"
               size="icon"
               onClick={nextProject}
-              className="w-10 h-10 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-violet-200/50 dark:border-violet-700/50 text-violet-700 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-950 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl pointer-events-auto translate-x-5"
+              className="w-10 h-10 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-amber-300/70 dark:border-amber-700/50 text-amber-800 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl pointer-events-auto translate-x-5"
               aria-label="Next project"
             >
               <ChevronRight className="w-5 h-5" />
@@ -128,10 +156,10 @@ export function Projects() {
             transition={{ duration: 0.6 }}
             className="flex justify-center"
           >
-            <Card className="min-h-[350px] bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-white/50 dark:border-gray-700/50 shadow-2xl hover:shadow-3xl transition-all duration-500 animate-fade-in-up flex flex-col">
+            <Card className="min-h-[350px] bg-white/90 dark:bg-gray-800/80 backdrop-blur-sm border-white/60 dark:border-gray-700/50 shadow-2xl hover:shadow-3xl transition-all duration-500 animate-fade-in-up flex flex-col">
               <CardHeader className="flex-shrink-0">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-amber-800 to-orange-800 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
                     {currentProject.name}
                   </CardTitle>
                   <div className="flex items-center gap-2">
@@ -155,7 +183,7 @@ export function Projects() {
                       href={currentProject.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-violet-600 dark:text-violet-400 hover:text-purple-600 dark:hover:text-purple-400 text-xs sm:text-sm lg:text-base flex items-center gap-1 font-semibold hover:scale-105 transition-all duration-200"
+                      className="text-amber-700 dark:text-amber-400 hover:text-orange-700 dark:hover:text-orange-400 text-xs sm:text-sm lg:text-base flex items-center gap-1 font-semibold hover:scale-105 transition-all duration-200"
                     >
                       <ExternalLink className="w-4 h-4" />
                       View Project
@@ -167,15 +195,15 @@ export function Projects() {
               <CardContent className="flex flex-col flex-1">
                 {/* Description - Takes up available space */}
                 <div className="flex-1">
-                  <CardDescription className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                  <CardDescription className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-800 dark:text-gray-300">
                     {currentProject.description}
                   </CardDescription>
                 </div>
 
                 {/* Tech Stack - Always at bottom */}
-                <div className="mt-6 pt-4 border-t border-violet-100 dark:border-violet-800">
+                <div className="mt-6 pt-4 border-t border-amber-200 dark:border-amber-800">
                   <p className="text-xs sm:text-sm lg:text-base font-semibold mb-3 text-gray-800 dark:text-gray-200 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-violet-500 dark:text-violet-400" />
+                    <Sparkles className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                     Tech Stack:
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -183,7 +211,7 @@ export function Projects() {
                       <Badge
                         key={index}
                         variant="outline"
-                        className="text-xs bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-950 dark:to-purple-950 border-violet-200 dark:border-violet-700 text-violet-700 dark:text-violet-300 hover:scale-105 transition-transform duration-200"
+                        className="text-xs bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-950 dark:to-orange-950 border-amber-300 dark:border-amber-700 text-amber-800 dark:text-amber-300 hover:scale-105 transition-transform duration-200"
                       >
                         {tech}
                       </Badge>
@@ -202,8 +230,8 @@ export function Projects() {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
                     index === currentIndex
-                      ? "bg-gradient-to-r from-violet-500 to-purple-500 shadow-lg"
-                      : "bg-violet-200 dark:bg-violet-700 hover:bg-violet-300 dark:hover:bg-violet-600"
+                      ? "bg-gradient-to-r from-amber-600 to-orange-600 shadow-lg"
+                      : "bg-amber-300 dark:bg-amber-700 hover:bg-amber-400 dark:hover:bg-amber-600"
                   }`}
                   aria-label={`Go to project ${index + 1}`}
                 />
