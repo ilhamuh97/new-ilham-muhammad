@@ -43,7 +43,7 @@ const projects = [
     techStack: ["Next.js", "Node.js", "Supabase", "express.js"],
     description:
       "IW-Commerce is the second version of the SASO E-commerce website, featuring an improved UI/UX, enhanced functionalities, and support for multiple events. The website is currently under development.",
-    status: "ongoing",
+    status: "in progress",
   },
   {
     name: "Preattentive Test",
@@ -171,7 +171,7 @@ export function Projects() {
                     ) : (
                       <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 shadow-lg">
                         <Clock className="w-3 h-3 mr-1" />
-                        Ongoing
+                        In Progress
                       </Badge>
                     )}
                   </div>
