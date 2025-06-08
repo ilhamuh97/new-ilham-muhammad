@@ -4,10 +4,12 @@ import { Journey } from "@/components/journey";
 import { Projects } from "@/components/projects";
 import { GitHubLink } from "@/components/github-link";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Portfolio() {
   return (
     <>
+      <LoadingScreen />
       <Header />
       <main
         className="h-dvh overflow-y-scroll scroll-smooth"

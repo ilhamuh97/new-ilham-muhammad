@@ -204,7 +204,7 @@ export function Journey() {
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-full border-4 sm:border-6 lg:border-8 border-white dark:border-gray-800 transition-all duration-700 z-20 shadow-lg ${
                       isActive
-                        ? `bg-gradient-to-r ${item.color} dark:${item.darkColor} shadow-2xl scale-125 sm:scale-150 lg:scale-175`
+                        ? `bg-gradient-to-r ${item.color} shadow-2xl scale-125 sm:scale-150 lg:scale-175`
                         : "bg-gray-400 dark:bg-gray-600 scale-100"
                     }`}
                   >
@@ -262,7 +262,7 @@ export function Journey() {
                           <div
                             className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-500 shadow-md ${
                               isActive
-                                ? `bg-gradient-to-r ${item.color} dark:${item.darkColor} shadow-lg`
+                                ? `bg-gradient-to-r ${item.color} shadow-lg`
                                 : "bg-gray-300 dark:bg-gray-700"
                             }`}
                           >
@@ -288,7 +288,7 @@ export function Journey() {
                             <p
                               className={`text-sm sm:text-base lg:text-lg font-semibold transition-all duration-500 ${
                                 isActive
-                                  ? `bg-gradient-to-r ${item.color} dark:${item.darkColor} bg-clip-text text-transparent`
+                                  ? `bg-gradient-to-r ${item.color} bg-clip-text text-transparent`
                                   : "text-gray-600 dark:text-gray-500"
                               }`}
                             >

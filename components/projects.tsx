@@ -8,6 +8,7 @@ import {
   Clock,
   CheckCircle,
   Sparkles,
+  Search,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -19,9 +20,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link";
 
 const projects = [
   {
+    slug: "classifyai",
     name: "ClassifyAI",
     link: "https://classify-ai.vercel.app/",
     techStack: ["React", "Tensorflow.js", "p5.js", "Ant Design", "ApexCharts"],
@@ -30,6 +33,7 @@ const projects = [
     status: "done",
   },
   {
+    slug: "saso-ecommerce",
     name: "SASO E-Commerce",
     link: null,
     techStack: ["Next.js", "Node.js", "Ant Design", "MongoDB", "express.js"],
@@ -38,14 +42,16 @@ const projects = [
     status: "done",
   },
   {
+    slug: "",
     name: "IW-Commerce",
     link: null,
     techStack: ["Next.js", "Node.js", "Supabase", "express.js"],
     description:
       "IW-Commerce is the second version of the SASO E-commerce website, featuring an improved UI/UX, enhanced functionalities, and support for multiple events. The website is currently under development.",
-    status: "in progress",
+    status: "ongoing",
   },
   {
+    slug: "preattentive-test",
     name: "Preattentive Test",
     link: "https://ilhamuh97.github.io/preattentive-test/",
     techStack: ["p5.js", "HTML", "CSS", "JavaScript"],
@@ -54,14 +60,16 @@ const projects = [
     status: "done",
   },
   {
+    slug: "",
     name: "Hanoi Visualizer",
     link: "https://hanoi-viz.netlify.app/",
-    techStack: ["svg.js", "HTML", "CSS", "JavaScript"],
+    techStack: ["SVG.js", "HTML", "CSS", "JavaScript"],
     description:
       "Hanoi Visualizer is a campus project that animates the execution of code for the Tower of Hanoi game. It helps visualize how the algorithm works step by step.",
     status: "done",
   },
   {
+    slug: "",
     name: "Histogram",
     link: "https://show-histogram.netlify.app/",
     techStack: ["highcharts", "HTML", "CSS", "JavaScript"],
@@ -159,8 +167,22 @@ export function Projects() {
             <Card className="min-h-[350px] bg-white/90 dark:bg-gray-800/80 backdrop-blur-sm border-white/60 dark:border-gray-700/50 shadow-2xl hover:shadow-3xl transition-all duration-500 animate-fade-in-up flex flex-col">
               <CardHeader className="flex-shrink-0">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-amber-800 to-orange-800 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
-                    {currentProject.name}
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl flex items-center gap-2">
+                    {currentProject.slug !== "" ? (
+                      <>
+                        <Search className="w-5 h-5 text-orange-700 dark:text-orange-300" />
+                        <Link
+                          href={`/projects/${currentProject.slug}`}
+                          className="bg-gradient-to-r from-amber-800 to-orange-800 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent hover:from-amber-700 hover:to-orange-700 dark:hover:from-amber-300 dark:hover:to-orange-300 transition-all duration-200 cursor-pointer"
+                        >
+                          {currentProject.name}
+                        </Link>
+                      </>
+                    ) : (
+                      <span className="bg-gradient-to-r from-amber-800 to-orange-800 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent hover:from-amber-700 hover:to-orange-700 dark:hover:from-amber-300 dark:hover:to-orange-300 transition-all duration-200 cursor-pointer">
+                        {currentProject.name}
+                      </span>
+                    )}
                   </CardTitle>
                   <div className="flex items-center gap-2">
                     {currentProject.status === "done" ? (
