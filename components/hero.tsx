@@ -38,16 +38,15 @@ export function Hero() {
 
       <div className="max-w-md mx-auto text-center space-y-6 relative z-10">
         <div className="relative w-48 h-48 mx-auto group">
-          <div className="relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3">
-            <Image
-              src="assets/ilham-muhammad.jpeg"
-              alt="Ilham's profile photo"
-              width={256}
-              height={256}
-              className="rounded-full object-cover border-4 border-white/50 dark:border-white/50 shadow-2xl"
-            />
-            <div className="absolute inset-0 rounded-full group-hover:from-yellow-400/30 group-hover:to-orange-400/30 transition-all duration-300"></div>
-          </div>
+          <div
+            className="
+              relative w-full h-full cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-3
+              rounded-full border-4 border-white dark:border-white shadow-2xl
+              bg-center bg-cover
+              bg-[url('/assets/ilham-muhammad-day.jpg')]
+              dark:bg-[url('/assets/ilham-muhammad-night.jpg')]
+            "
+          />
         </div>
 
         <div className="space-y-4">
